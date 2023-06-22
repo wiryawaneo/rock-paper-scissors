@@ -7,22 +7,22 @@ function getComputerChoice() {
 
 console.log(getComputerChoice());
 
-let playerSelection = prompt("Rock, paper or scissors?");
-
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return "Draw! Both are " + playerChoice;
-  } else if (playerChoice === "rock" && computerChoice === "scissors") {
+  } else if (
+    (playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "paper" && computerChoice === "rock") ||
+    (playerChoice === "scissors" && computerChoice === "paper")
+  ) {
+    playerScore += 1;
     return "Win!" + playerChoice + " beats " + computerChoice;
-  } else if (playerChoice === "paper" && computerChoice === "rock") {
-    return "Win!" + playerChoice + " beats " + computerChoice;
-  } else if (playerChoice === "scissors" && computerChoice === "paper") {
-    return "Win!" + playerChoice + " beats " + computerChoice;
-  } else if (playerChoice === "rock" && computerChoice === "paper") {
-    return "Lost!" + computerChoice + " beats " + playerChoice;
-  } else if (playerChoice === "paper" && computerChoice === "scissors") {
-    return "Lost!" + computerChoice + " beats " + playerChoice;
-  } else if (playerChoice === "scissors" && computerChoice === "rock") {
+  } else if (
+    (playerChoice === "rock" && computerChoice === "paper") ||
+    (playerChoice === "paper" && computerChoice === "scissors") ||
+    (playerChoice === "scissors" && computerChoice === "rock")
+  ) {
+    computerScore += 1;
     return "Lost!" + computerChoice + " beats " + playerChoice;
   } else if (
     playerChoice != "rock" ||
@@ -33,13 +33,27 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-if (
-  playerSelection.toLowerCase() === "rock" ||
-  playerSelection.toLowerCase() === "scissors" ||
-  playerSelection.toLowerCase() === "paper"
-) {
-  console.log(playRound(playerSelection, getComputerChoice()));
-  console.log(playerSelection.toLowerCase());
-} else {
-  console.log("wrong input!");
+function game() {
+  playerScore = 0;
+  computerScore = 0;
+  for (i = 0; i < 100; i++) {
+    if (playerScore < 5 && computerScore < 5) {
+      let playerSelection = prompt("Rock, paper or scissors?");
+      if (
+        playerSelection.toLowerCase() === "rock" ||
+        playerSelection.toLowerCase() === "scissors" ||
+        playerSelection.toLowerCase() === "paper"
+      ) {
+        // playRound(playerSelection, getComputerChoice());
+        console.log(playerSelection.toLowerCase());
+        console.log(playRound(playerSelection, getComputerChoice()));
+      } else {
+        console.log("wrong input!");
+      }
+    } else {
+      return console.log(playerScore, computerScore);
+    }
+  }
 }
+
+game();
