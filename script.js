@@ -58,19 +58,26 @@ function playRound(playerChoice, computerChoice) {
 //   }
 // }
 
-let winCount = 0;
-let loseCount = 0;
-
 function userSelection() {
+  let winCount = 0;
+  let loseCount = 0;
   let userChoiceAmt = document.getElementsByClassName("userChoice");
   for (i = 0; i < userChoiceAmt.length; i++) {
     userChoiceAmt[i].addEventListener("click", (e) => {
       playRound(e.target.innerHTML, getComputerChoice());
       console.log(result);
-      if (result === "won" && winCount <5) {
-        return winCount++;
-      } else if (result === "lost" && loseCount <5) {
-        return loseCount++;
+      if (result === "won") {
+        winCount++;
+        document.getElementById("userScore").innerHTML = winCount;
+      } else if (result === "lost") {
+        loseCount++;
+        document.getElementById("computerScore").innerHTML = loseCount;
+      }
+      if (winCount === 5 || loseCount === 5) {
+        winCount = 0;
+        loseCount = 0;
+        document.getElementById("userScore").innerHTML = winCount;
+        document.getElementById("computerScore").innerHTML = loseCount;
       }
     });
   }
