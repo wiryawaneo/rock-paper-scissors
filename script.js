@@ -58,7 +58,7 @@ function playRound(playerChoice, computerChoice) {
 //   }
 // }
 
-function userSelection() {
+function game() {
   let winCount = 0;
   let loseCount = 0;
   let userChoiceAmt = document.getElementsByClassName("userChoice");
@@ -83,4 +83,6 @@ function userSelection() {
   }
 }
 
-userSelection();
+game();
+
+//add a game lost and reset game feature (win/lost ==== 5, button modal pop and click to reset?)
