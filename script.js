@@ -16,6 +16,7 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "scissors" && computerChoice === "paper")
   ) {
     playerScore += 1;
+    document.getElementById("userScore").innerHTML = playerScore;
     return "Win!" + playerChoice + " beats " + computerChoice;
   } else if (
     (playerChoice === "rock" && computerChoice === "paper") ||
@@ -23,6 +24,7 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "scissors" && computerChoice === "rock")
   ) {
     computerScore += 1;
+    document.getElementById("computerScore").innerHTML = computerScore;
     return "Lost!" + computerChoice + " beats " + playerChoice;
   } else if (
     playerChoice != "rock" ||
@@ -36,9 +38,9 @@ function playRound(playerChoice, computerChoice) {
 function game() {
   playerScore = 0;
   computerScore = 0;
-  for (i = 0; i < 100; i++) {
+  for (i = 0; ; i++) {
     if (playerScore < 5 && computerScore < 5) {
-      let playerSelection = prompt("Rock, paper or scissors?");
+      //   let playerSelection = prompt("Rock, paper or scissors?");
       if (
         playerSelection.toLowerCase() === "rock" ||
         playerSelection.toLowerCase() === "scissors" ||
@@ -56,4 +58,9 @@ function game() {
   }
 }
 
-game();
+// game();
+
+const optionList = document.getElementsByClassName("buttonOptions");
+for (i = 0; i < optionList.length; i++) {
+    console.log(optionList[i].innerHTML)
+}
