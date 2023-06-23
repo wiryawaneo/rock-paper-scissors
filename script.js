@@ -62,5 +62,7 @@ function game() {
 
 const optionList = document.getElementsByClassName("buttonOptions");
 for (i = 0; i < optionList.length; i++) {
-    console.log(optionList[i].innerHTML)
+    optionList[i].addEventListener("click", (e) => {
+        console.log(e.target.innerHTML)
+    })
 }
