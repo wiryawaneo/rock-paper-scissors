@@ -38,6 +38,7 @@ function playRound(playerChoice, computerChoice) {
 function game() {
   playerScore = 0;
   computerScore = 0;
+  //   playerSelection = "";
   for (i = 0; ; i++) {
     if (playerScore < 5 && computerScore < 5) {
       //   let playerSelection = prompt("Rock, paper or scissors?");
@@ -48,21 +49,24 @@ function game() {
       ) {
         // playRound(playerSelection, getComputerChoice());
         console.log(playerSelection.toLowerCase());
-        console.log(playRound(playerSelection, getComputerChoice()));
-      } else {
-        console.log("wrong input!");
+        return console.log(
+          "round" + playRound(playerSelection, getComputerChoice())
+        );
       }
+      //   else {
+      //     console.log("wrong input!");
+      //   }
     } else {
-      return console.log(playerScore, computerScore);
+      return console.log("SCORE" + playerScore, computerScore);
     }
   }
 }
 
 // game();
 
-const optionList = document.getElementsByClassName("buttonOptions");
-for (i = 0; i < optionList.length; i++) {
-    optionList[i].addEventListener("click", (e) => {
+let userChoiceAmt = document.getElementsByClassName("userChoice");
+for (i = 0; i<userChoiceAmt.length; i++) {
+    userChoiceAmt[i].addEventListener('click', (e) => {
         console.log(e.target.innerHTML)
     })
 }
