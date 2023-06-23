@@ -9,30 +9,32 @@ function playRound(playerChoice, computerChoice) {
   playerChoice = playerChoice.toLowerCase();
   if (playerChoice === computerChoice) {
     document.getElementById("gameResult").innerHTML = "It's a draw!";
-    return console.log("Draw! Both are " + playerChoice);
+    return (result = "draw");
+    // return console.log("Draw! Both are " + playerChoice);
   } else if (
     (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "paper" && computerChoice === "rock") ||
     (playerChoice === "scissors" && computerChoice === "paper")
   ) {
     document.getElementById("gameResult").innerHTML = "You won!";
-    return console.log("Win!" + playerChoice + " beats " + computerChoice);
+    return (result = "won");
+    // return console.log("Win!" + playerChoice + " beats " + computerChoice);
   } else if (
     (playerChoice === "rock" && computerChoice === "paper") ||
     (playerChoice === "paper" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "rock")
   ) {
     document.getElementById("gameResult").innerHTML = "You lost!";
-    return console.log("Lost!" + computerChoice + " beats " + playerChoice);
+    return (result = "lost");
+    // return console.log("Lost!" + computerChoice + " beats " + playerChoice);
   }
 }
 
-//FIX GAME AND PROBABLY ADD IT TO USERSELECTION BELOW
+// FIX GAME AND PROBABLY ADD IT TO USERSELECTION BELOW
 
 // function game() {
 //   playerScore = 0;
 //   computerScore = 0;
-//   //   playerSelection = "";
 //   for (i = 0; ; i++) {
 //     if (playerScore < 5 && computerScore < 5) {
 //       //   let playerSelection = prompt("Rock, paper or scissors?");
@@ -56,12 +58,20 @@ function playRound(playerChoice, computerChoice) {
 //   }
 // }
 
+let winCount = 0;
+let loseCount = 0;
+
 function userSelection() {
   let userChoiceAmt = document.getElementsByClassName("userChoice");
   for (i = 0; i < userChoiceAmt.length; i++) {
     userChoiceAmt[i].addEventListener("click", (e) => {
       playRound(e.target.innerHTML, getComputerChoice());
-      return console.log(e.target.innerHTML);
+      console.log(result);
+      if (result === "won" && winCount <5) {
+        return winCount++;
+      } else if (result === "lost" && loseCount <5) {
+        return loseCount++;
+      }
     });
   }
 }
