@@ -1,19 +1,61 @@
 body {
-    font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
+  background-color: silver;
+  color:rgb(33, 118, 33);
 }
 
-.contents {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.contents * {
-    border:1px solid red;
+#contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top:5%;
+}
+
+#textContent {
+    background-color: black;
+    border:10px solid grey;
+}
+
+#contents * {
+  /* border: 1px solid red; */
+}
+
+#gameHeader {
+  font-size: 2em;
+}
+
+.scoreHeader {
+  font-size: 1.6em;
+}
+
+#gameResult {
+  font-size: 0.8em;
+}
+
+#gameOptions {
+  margin-top: 2em;
+}
+
+.userChoice {
+  background-color: yellow;
+  width: 10em;
+  height: 3em;
+  border: 3px solid black;
+  box-shadow: 5px 10px 0 #000;
 }
 
 #playAgain {
-    display:none;
+  display: none;
 }

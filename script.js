@@ -46,6 +46,13 @@ function game() {
         document.getElementById("computerScore").innerHTML = loseCount;
       }
       if (winCount === 5 || loseCount === 5) {
+        if (winCount === 5) {
+          document.getElementById("gameResult").innerHTML =
+            "You Won! Play Again?";
+        } else if (loseCount === 5) {
+          document.getElementById("gameResult").innerHTML =
+            "You Lost, Play Again?";
+        }
         const playAgainBtn = document.getElementById("playAgain");
         playAgainBtn.style.display = "block";
         for (j = 0; j < userChoiceAmt.length; j++) {
@@ -60,6 +67,7 @@ game();
 
 //playAgain to reset score and game
 function playAgain() {
+  document.getElementById("gameResult").innerHTML = "Select an option below!";
   let userChoiceAmt = document.getElementsByClassName("userChoice");
   for (j = 0; j < userChoiceAmt.length; j++) {
     userChoiceAmt[j].disabled = false;
