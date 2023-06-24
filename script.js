@@ -63,8 +63,6 @@ function game() {
   }
 }
 
-game();
-
 //playAgain to reset score and game
 function playAgain() {
   document.getElementById("gameResult").innerHTML = "Select an option below!";
@@ -83,23 +81,28 @@ function playAgain() {
 
 //typewrite.js
 const typewriter = new Typewriter("#gameHeader", {
-    loop: false,
-    skipAddStyles: true,
-    delay: 85,
-    deleteSpeed: 30
-    // stringSplitter
-  });
+  loop: false,
+  skipAddStyles: true,
+  delay: 85,
+  deleteSpeed: 30,
+});
 
-  typewriter
-    .pauseFor(500)
-    .typeString("Welcome to Rock, Paper Scissors!")
-    .pauseFor(700)
-    .deleteChars(32)
-    .typeString("Click on the button below to start playing!")
-    .pauseFor(1000)
-    .typeString("<br />")
-    .typeString("<br />")
-    .typeString("<p class='scoreHeader'>Your Score - <span id='userScore'>0</span></p>")
-    .typeString("<p class='scoreHeader'>Computer's Score - <span id='computerScore'>0</span></p>")
-    .typeString("<span id='gameResult'>Select an option below!</span>")
-    .start();
+typewriter
+  .pauseFor(500)
+  .typeString("Welcome to Rock, Paper Scissors!")
+  .pauseFor(700)
+  .deleteChars(32)
+  .typeString("Click on the button below to start playing!")
+  .pauseFor(1000)
+  .typeString("<br />")
+  .typeString("<br />")
+  .typeString(
+    "<p class='scoreHeader'>Your Score - <span id='userScore'>0</span></p>"
+  )
+  .typeString(
+    "<p class='scoreHeader'>Computer's Score - <span id='computerScore'>0</span></p>"
+  )
+  .typeString("<span id='gameResult'>Select an option below!</span>")
+  .start();
+
+game();
