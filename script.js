@@ -74,11 +74,10 @@ function game() {
         document.getElementById("computerScore").innerHTML = loseCount;
       }
       if (winCount === 5 || loseCount === 5) {
-        winCount = 0;
-        loseCount = 0;
-        document.getElementById("userScore").innerHTML = winCount;
-        document.getElementById("computerScore").innerHTML = loseCount;
+        const playAgainBtn = document.getElementById("playAgain");
+        playAgainBtn.style.display = "block";
       }
+      console.log(winCount, loseCount)
     });
   }
 }
@@ -86,3 +85,12 @@ function game() {
 game();
 
 //add a game lost and reset game feature (win/lost ==== 5, button modal pop and click to reset?)
+
+function playAgain() {
+  const playAgainBtn = document.getElementById("playAgain");
+  playAgainBtn.style.display = "none";
+  let winCount = 0;
+  return loseCount = 0;
+//   document.getElementById("userScore").innerHTML = winCount;
+//   document.getElementById("computerScore").innerHTML = loseCount;
+}
