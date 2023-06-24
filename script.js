@@ -58,9 +58,10 @@ function playRound(playerChoice, computerChoice) {
 //   }
 // }
 
+let winCount = 0;
+let loseCount = 0;
+
 function game() {
-  let winCount = 0;
-  let loseCount = 0;
   let userChoiceAmt = document.getElementsByClassName("userChoice");
   for (i = 0; i < userChoiceAmt.length; i++) {
     userChoiceAmt[i].addEventListener("click", (e) => {
@@ -76,8 +77,11 @@ function game() {
       if (winCount === 5 || loseCount === 5) {
         const playAgainBtn = document.getElementById("playAgain");
         playAgainBtn.style.display = "block";
+        for (j = 0; j < userChoiceAmt.length; j++) {
+            userChoiceAmt[j].disabled = true;
+        }
       }
-      console.log(winCount, loseCount)
+      console.log(winCount, loseCount);
     });
   }
 }
@@ -87,10 +91,15 @@ game();
 //add a game lost and reset game feature (win/lost ==== 5, button modal pop and click to reset?)
 
 function playAgain() {
+    let userChoiceAmt = document.getElementsByClassName("userChoice");
+    for (j = 0; j < userChoiceAmt.length; j++) {
+        userChoiceAmt[j].disabled = false;
+    }
   const playAgainBtn = document.getElementById("playAgain");
   playAgainBtn.style.display = "none";
-  let winCount = 0;
-  return loseCount = 0;
-//   document.getElementById("userScore").innerHTML = winCount;
-//   document.getElementById("computerScore").innerHTML = loseCount;
+  document.getElementById("userScore").innerHTML = 0;
+  document.getElementById("computerScore").innerHTML = 0;
+  winCount = 0;
+  return (loseCount = 0);
+  
 }
