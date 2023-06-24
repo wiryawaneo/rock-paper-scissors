@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google font https://fonts.google.com/specimen/Press+Start+2P -->
+    <!-- typewrite.js -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,13 +17,14 @@
   <body>
     <div id="contents">
       <div id="textContent">
-        <div id="gameHeader"><p>Rock Paper Scissors!</p></div>
+        <!-- <div id="gameHeader"><p>Rock Paper Scissors!</p></div> -->
         <div>
-          <p class="scoreHeader">Your Score - <a id="userScore">0</a></p>
+            <div id="gameHeader"></div>
+          <!-- <p class="scoreHeader">Your Score - <a id="userScore">0</a></p>
           <p class="scoreHeader">
             Computer's Score - <a id="computerScore">0</a>
           </p>
-          <p id="gameResult">Select an option below!</p>
+          <p id="gameResult">Select an option below!</p> -->
         </div>
       </div>
       <div id="gameOptions">
@@ -36,6 +38,4 @@
     </div>
   </body>
   <script src="script.js"></script>
-  <!-- typewrite.js -->
-  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </html>

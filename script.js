@@ -80,3 +80,29 @@ function playAgain() {
   winCount = 0;
   return (loseCount = 0);
 }
+
+//typewrite.js
+const typewriter = new Typewriter("#gameHeader", {
+    loop: false,
+    skipAddStyles: true,
+    delay: 100
+    // stringSplitter
+  });
+
+  typewriter
+    .pauseFor(500)
+    .typeString("Welcome to Rock, Paper Scissors!")
+    .pauseFor(500)
+    .deleteChars(32)
+    .typeString("Click on the button below to start playing!")
+    .pauseFor(1000)
+    .typeString("<br />")
+    .typeString("<br />")
+    .typeString("Your Score - <span id='userScore'>0</span>")
+    .typeString("<br />")
+    .typeString("<br />")
+    .typeString("Computer's Score - <span id='computerScore'>0</span>")
+    .typeString("<br />")
+    .typeString("<br />")
+    .typeString("<span id='gameResult'>Select an option below!</span>")
+    .start();
