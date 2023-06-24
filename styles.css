@@ -66,6 +66,9 @@ button:active {
   padding-left: 10px;
 }
 
+#gameHeader p {
+}
+
 .scoreHeader {
   font-size: 1.6em;
 }
@@ -96,6 +99,6 @@ button:active {
 }
 
 #playAgain:active {
-    background-color: rgb(106, 106, 106);
-    transform: translateY(4px);
+  background-color: rgb(106, 106, 106);
+  transform: translateY(4px);
 }
