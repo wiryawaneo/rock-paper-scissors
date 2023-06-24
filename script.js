@@ -53,8 +53,8 @@ function game() {
           document.getElementById("gameResult").innerHTML =
             "You Lost, Play Again?";
         }
-        const playAgainBtn = document.getElementById("playAgain");
-        playAgainBtn.style.display = "block";
+        document.getElementById("playAgain").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
         for (j = 0; j < userChoiceAmt.length; j++) {
           userChoiceAmt[j].disabled = true;
         }
@@ -72,8 +72,9 @@ function playAgain() {
   for (j = 0; j < userChoiceAmt.length; j++) {
     userChoiceAmt[j].disabled = false;
   }
-  const playAgainBtn = document.getElementById("playAgain");
-  playAgainBtn.style.display = "none";
+  document.getElementById("playAgain").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+
   document.getElementById("userScore").innerHTML = 0;
   document.getElementById("computerScore").innerHTML = 0;
   winCount = 0;
