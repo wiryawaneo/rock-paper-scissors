@@ -55,26 +55,23 @@ button:active {
   border: 10px solid grey;
   width: 60%;
   height: 50vh;
-}
-
-#contents * {
-  /* border: 1px solid red; */
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #gameHeader {
   font-size: 2em;
-  padding-left: 10px;
-}
-
-#gameHeader p {
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .scoreHeader {
-  font-size: 1.6em;
+  font-size: 0.8em;
 }
 
 #gameResult {
-  font-size: 0.8em;
+  font-size: 0.5em;
 }
 
 #gameOptions {

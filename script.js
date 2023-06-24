@@ -85,24 +85,21 @@ function playAgain() {
 const typewriter = new Typewriter("#gameHeader", {
     loop: false,
     skipAddStyles: true,
-    delay: 100
+    delay: 85,
+    deleteSpeed: 30
     // stringSplitter
   });
 
   typewriter
     .pauseFor(500)
     .typeString("Welcome to Rock, Paper Scissors!")
-    .pauseFor(500)
+    .pauseFor(700)
     .deleteChars(32)
     .typeString("Click on the button below to start playing!")
     .pauseFor(1000)
     .typeString("<br />")
     .typeString("<br />")
-    .typeString("Your Score - <span id='userScore'>0</span>")
-    .typeString("<br />")
-    .typeString("<br />")
-    .typeString("Computer's Score - <span id='computerScore'>0</span>")
-    .typeString("<br />")
-    .typeString("<br />")
+    .typeString("<p class='scoreHeader'>Your Score - <span id='userScore'>0</span></p>")
+    .typeString("<p class='scoreHeader'>Computer's Score - <span id='computerScore'>0</span></p>")
     .typeString("<span id='gameResult'>Select an option below!</span>")
     .start();
