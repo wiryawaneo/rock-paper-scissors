@@ -18,13 +18,27 @@ body {
 }
 
 button {
+  background-color: grey;
+  color: black;
+  width: 10em;
+  height: 3em;
+  border: 3px solid black;
+  box-shadow: 5px 10px 0 #000;
   background: none;
-  color: inherit;
-  border: none;
   padding: 0;
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+button:hover {
+  background-color: rgb(81, 81, 81);
+  color: rgb(232, 232, 232);
+}
+
+button:active {
+  background-color: rgb(106, 106, 106);
+  transform: translateY(4px);
 }
 
 #contents {
@@ -39,6 +53,8 @@ button {
 #textContent {
   background-color: black;
   border: 10px solid grey;
+  width: 60%;
+  height: 50vh;
 }
 
 #contents * {
@@ -62,25 +78,24 @@ button {
   margin-top: 2em;
 }
 
-.userChoice {
-  background-color: grey;
-  color: black;
-  width: 10em;
-  height: 3em;
-  border: 3px solid black;
-  box-shadow: 5px 10px 0 #000;
+#playAgain {
+  background-color: rgb(221, 221, 221);
+  border-color: #323232;
+  box-shadow: 5px 10px 0 #323232;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 44%;
+  display: none;
+  z-index: 3;
 }
 
-#playAgain {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left:44%;
-  display: none;
-  background-color: grey;
-  color: black;
-  width: 10em;
-  height: 3em;
-  border: 3px solid black;
-  box-shadow: 5px 10px 0 #000;
+#playAgain:hover {
+  background-color: rgb(81, 81, 81);
+  color: rgb(232, 232, 232);
+}
+
+#playAgain:active {
+    background-color: rgb(106, 106, 106);
+    transform: translateY(4px);
 }
